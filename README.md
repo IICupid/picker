@@ -14,4 +14,6 @@
 
 ### events
 	* openPicker: 显示选择弹层
+###  end
+
 
