@@ -1,6 +1,6 @@
 # 选择弹层
 
-### 使用
+### 使用方式
  <picker :picker-data="pickerData" :title="title" type="ios" @selected="onSelected" @change="onChange" @cancel="onCancel" :default-index="defaultIndex" ></picker>
 
 ### props
