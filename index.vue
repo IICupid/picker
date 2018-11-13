@@ -144,7 +144,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="sass" scoped>
     @import 'sassHelper/mixin';
     @import 'sassHelper/vars';
     $yellow: map-get($taoche, yellow);
