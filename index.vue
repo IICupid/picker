@@ -1,8 +1,9 @@
 <template>
-    <div class="picker-mask" v-show="isShow" transition="fadeIn"></div>
+<div>
+     <div class="picker-mask" v-show="isShow" transition="fadeIn"></div>
     <div class="picker-wrapper-android" v-if="type==='android'" v-show="isShow" transition="fadeUp">
         <ul v-el:picker-ul>
-            <li @click="confirmHandler($event,$index)" v-for="pickerItem in pickerListData[0]" data-val="{{pickerItem.value}}" :class="selectedIndex[0]==$index?'cur':''">{{pickerItem.text}}</li>
+            <li @click="confirmHandler($event,$index)" v-for="(pickerItem,index) in pickerListData[0]" :key="index" data-val="{{pickerItem.value}}" :class="selectedIndex[0]==$index?'cur':''">{{pickerItem.text}}</li>
         </ul>
         <div class="picker-confirm-android" @click="cancelHandler">取消</div>
     </div>
@@ -17,11 +18,12 @@
                 <div class="mask-top"></div>
                 <div class="mask-bottom"></div>
                 <div class="wheel-wrapper wheel-wrapper-hook">
-                   <picker-item  v-for="pickerList in pickerListData" :is-show="isShow" :index="$index" :default-index-item="defaultIndex[$index]" :items="pickerList"></picker-item>
+                   <picker-item  v-for="(pickerList,picIndex) in pickerListData" :key="picIndex" :is-show="isShow" :index="$index" :default-index-item="defaultIndex[$index]" :items="pickerList"></picker-item>
                 </div>
             </div>
             <div class="picker-footer footer-hook"></div>
         </div>
+    </div>
     </div>
 </template>
 
